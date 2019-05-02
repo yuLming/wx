@@ -1,0 +1,77 @@
+2019-05-02 20:58:05.978 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-84A3JD6 with PID 61720 (C:\Users\Mueea\IdeaProjects\demo\target\classes started by Mueea in C:\Users\Mueea\IdeaProjects\demo)
+2019-05-02 20:58:05.991 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2019-05-02 20:58:06.067 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1efe439d: startup date [Thu May 02 20:58:06 CST 2019]; root of context hierarchy
+2019-05-02 20:58:06.556 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2019-05-02 20:58:09.086 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 80 (http)
+2019-05-02 20:58:09.111 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-05-02 20:58:09.112 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-05-02 20:58:09.280 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-05-02 20:58:09.281 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3214 ms
+2019-05-02 20:58:09.596 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-05-02 20:58:09.603 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-02 20:58:09.604 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-02 20:58:09.604 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-05-02 20:58:09.604 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-02 20:58:10.240 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1efe439d: startup date [Thu May 02 20:58:06 CST 2019]; root of context hierarchy
+2019-05-02 20:58:10.353 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx]}" onto public java.lang.Object com.example.demo.controller.TestController.index()
+2019-05-02 20:58:10.354 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tqyb/{city}]}" onto public java.lang.Object com.example.demo.controller.TestController.tqyb(java.lang.String) throws java.lang.Exception
+2019-05-02 20:58:10.358 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-05-02 20:58:10.361 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-05-02 20:58:10.433 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 20:58:10.433 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 20:58:10.525 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 20:58:11.000 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-05-02 20:58:11.026 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-05-02 20:58:11.043 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-05-02 20:58:11.060 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-05-02 20:58:11.089 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
+2019-05-02 20:58:11.098 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 6.191 seconds (JVM running for 9.07)
+2019-05-02 20:58:59.001 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-05-02 20:58:59.002 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-05-02 20:58:59.043 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 41 ms
+2019-05-02 20:58:59.099 [http-nio-80-exec-1] INFO  com.example.demo.aop.WebLogAspect - URL : http://10.43.10.171/wx
+2019-05-02 20:58:59.101 [http-nio-80-exec-1] INFO  com.example.demo.aop.WebLogAspect - HTTP_METHOD : GET
+2019-05-02 20:58:59.102 [http-nio-80-exec-1] INFO  com.example.demo.aop.WebLogAspect - IP : 10.43.10.171
+2019-05-02 20:58:59.119 [http-nio-80-exec-1] INFO  com.example.demo.aop.WebLogAspect - RESPONSE : success
+2019-05-02 21:14:23.997 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-84A3JD6 with PID 57332 (C:\Users\Mueea\IdeaProjects\demo\target\classes started by Mueea in C:\Users\Mueea\IdeaProjects\demo)
+2019-05-02 21:14:24.000 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2019-05-02 21:14:24.105 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1efe439d: startup date [Thu May 02 21:14:24 CST 2019]; root of context hierarchy
+2019-05-02 21:14:24.533 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2019-05-02 21:14:26.528 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 80 (http)
+2019-05-02 21:14:26.543 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-05-02 21:14:26.545 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-05-02 21:14:26.689 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-05-02 21:14:26.689 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2584 ms
+2019-05-02 21:14:26.979 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-05-02 21:14:26.986 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-02 21:14:26.987 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-02 21:14:26.987 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-05-02 21:14:26.987 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-02 21:14:27.644 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1efe439d: startup date [Thu May 02 21:14:24 CST 2019]; root of context hierarchy
+2019-05-02 21:14:27.742 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/tqyb/{city}]}" onto public java.lang.Object com.example.demo.controller.TestController.tqyb(java.lang.String) throws java.lang.Exception
+2019-05-02 21:14:27.743 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/verify_wx_token]}" onto public java.lang.String com.example.demo.controller.TestController.verifyWXToken(javax.servlet.http.HttpServletRequest) throws com.example.demo.model.AesException
+2019-05-02 21:14:27.746 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-05-02 21:14:27.747 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-05-02 21:14:27.842 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 21:14:27.849 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 21:14:27.943 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 21:14:28.293 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-05-02 21:14:28.319 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-05-02 21:14:28.333 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-05-02 21:14:28.354 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-05-02 21:14:28.381 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
+2019-05-02 21:14:28.386 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 5.144 seconds (JVM running for 7.61)
+2019-05-02 21:15:08.295 [main] INFO  c.example.demo.DemoApplicationTests - Starting DemoApplicationTests on DESKTOP-84A3JD6 with PID 46588 (started by Mueea in C:\Users\Mueea\IdeaProjects\demo)
+2019-05-02 21:15:08.296 [main] INFO  c.example.demo.DemoApplicationTests - No active profile set, falling back to default profiles: default
+2019-05-02 21:15:08.325 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2767e23c: startup date [Thu May 02 21:15:08 CST 2019]; root of context hierarchy
+2019-05-02 21:15:08.723 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2019-05-02 21:15:10.496 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@2767e23c: startup date [Thu May 02 21:15:08 CST 2019]; root of context hierarchy
+2019-05-02 21:15:10.602 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/verify_wx_token]}" onto public java.lang.String com.example.demo.controller.TestController.verifyWXToken(javax.servlet.http.HttpServletRequest) throws com.example.demo.model.AesException
+2019-05-02 21:15:10.603 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/tqyb/{city}]}" onto public java.lang.Object com.example.demo.controller.TestController.tqyb(java.lang.String) throws java.lang.Exception
+2019-05-02 21:15:10.606 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-05-02 21:15:10.607 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-05-02 21:15:10.692 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 21:15:10.693 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 21:15:10.801 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-02 21:15:11.096 [main] INFO  c.example.demo.DemoApplicationTests - Started DemoApplicationTests in 3.337 seconds (JVM running for 4.271)
+2019-05-02 21:15:11.205 [Thread-2] INFO  o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@2767e23c: startup date [Thu May 02 21:15:08 CST 2019]; root of context hierarchy
