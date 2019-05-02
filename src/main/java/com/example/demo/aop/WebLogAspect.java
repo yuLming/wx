@@ -49,36 +49,5 @@ public class WebLogAspect {
         logger.info("RESPONSE : " + ret);
     }
 
-/*
-    @Around("webLog()")
-    public void doAround(ProceedingJoinPoint joinPoint) {
-        // 拦截的实体类
-        Object target = joinPoint.getTarget();
-        // 拦截的方法名称。当前正在执行的方法
-        String methodName = joinPoint.getSignature().getName();
-        // 拦截的方法参数
-        Object[] args = joinPoint.getArgs();
-        // 拦截的放参数类型
-        Signature sig = joinPoint.getSignature();
-        // 获得被拦截的方法
-        Method method = null;
-        MethodSignature msig = (MethodSignature) sig;
-        Class[] parameterTypes = msig.getMethod().getParameterTypes();
-        try {
-            method = target.getClass().getMethod(methodName, parameterTypes);
-            Long start = System.currentTimeMillis();
-            try {
-                joinPoint.proceed(args);
-            } catch (Throwable e) {
-                logger.error("统计" + target.getClass().getName() + "." + method.getName() + "方法执行耗时环绕通知出错", e);
-            }
-            Long end = System.currentTimeMillis();
-            Long time = end - start;
-            logger.info("webLong - " + target.getClass().getName() + "." + method.getName() + " - take " + DateUtil.formatTime(time));
-        } catch (Exception e) {
-            logger.error("获取方法名异常", e);
-        }
-    }
-    */
 }
 
