@@ -100,7 +100,7 @@ public class HttpUtil {
     public static String postJsonDataByHttps(String url, String reqObjStr)
             throws NoSuchAlgorithmException, KeyManagementException, IOException {
 
-        log.debug("开始连接" + url);
+        log.info("开始连接" + url);
         SSLContext sc = SSLContext.getInstance("SSL");
         sc.init(null, new TrustManager[]{new TrustAnyTrustManager()}, new java.security.SecureRandom());
         URL console = new URL(url);
@@ -126,7 +126,39 @@ public class HttpUtil {
             sb.append("\r\n");
         }
         reader.close();
-        log.debug("接收报文：\n" + sb.toString());
+        log.info("接收报文：\n" + sb.toString());
+        return sb.toString();
+    }
+
+    public static String getDataByHttps(String url)
+            throws NoSuchAlgorithmException, KeyManagementException, IOException {
+
+        log.info("开始连接" + url);
+        SSLContext sc = SSLContext.getInstance("SSL");
+        sc.init(null, new TrustManager[]{new TrustAnyTrustManager()}, new java.security.SecureRandom());
+        URL console = new URL(url);
+        HttpsURLConnection conn = (HttpsURLConnection) console.openConnection();
+        conn.setSSLSocketFactory(sc.getSocketFactory());
+        conn.setHostnameVerifier(new TrustAnyHostnameVerifier());
+        conn.setDoOutput(true);
+        // 设置请求头
+        conn.setRequestProperty("Content-Type", "application/json;charset=utf-8");
+        conn.connect();
+        DataOutputStream out = new DataOutputStream(conn.getOutputStream());
+
+        // 刷新、关闭
+        out.flush();
+        out.close();
+        InputStream is = conn.getInputStream();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+        StringBuilder sb = new StringBuilder();
+        String strRead;
+        while ((strRead = reader.readLine()) != null) {
+            sb.append(strRead);
+            sb.append("\r\n");
+        }
+        reader.close();
+        log.info("接收报文：\n" + sb.toString());
         return sb.toString();
     }
 
@@ -264,6 +296,7 @@ public class HttpUtil {
         Optional<HttpEntity> httpEntity = getDataByHttp(url, Optional.ofNullable(paramMap), charset, 3000);
         if (httpEntity.isPresent()) {
             String result = EntityUtils.toString(httpEntity.get());
+            log.info(result);
             return result;
         } else {
             return "";

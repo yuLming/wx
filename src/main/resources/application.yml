@@ -1,2 +1,14 @@
 server:
-  port: 80
+  port: 8080
+
+spring:
+  mvc:
+    dispatch-options-request: true
+  http:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 100Mb
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
