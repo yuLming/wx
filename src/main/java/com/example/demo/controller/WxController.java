@@ -169,7 +169,16 @@ public class WxController {
                     respMessage = MessageUtil.messageToXml(text);
                 }
 
+            } else if (MessageUtil.EVENT_TYPE_SUBSCRIBE.equals(msgType)) {
+                text.setContent("123");
+                respMessage = MessageUtil.messageToXml(text);
+            }  else if (MessageUtil.REQ_MESSAGE_TYPE_EVENT.equals(msgType)) {//被关注事件
+                text.setContent("123");
+                respMessage = MessageUtil.messageToXml(text);
             }
+
+            //
+
 
             log.info(respMessage);
             //response.getWriter().write(respMessage);
