@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.model.*;
 import com.example.demo.util.*;
@@ -39,27 +40,6 @@ public class WxController {
         return "";
     }
 
-    @RequestMapping(value = "/verify_wx_token", method = {RequestMethod.GET, RequestMethod.POST})
-    @ResponseBody
-    public String verifyWXToken(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-        boolean isGet = request.getMethod().toLowerCase().equals("get");
-
-        if (isGet) {
-            String msgSignature = request.getParameter("signature");
-            String msgTimestamp = request.getParameter("timestamp");
-            String msgNonce = request.getParameter("nonce");
-            String echostr = request.getParameter("echostr");
-            if (WXPublicUtils.verifyUrl(msgSignature, msgTimestamp, msgNonce)) {
-                return echostr;
-            }
-        } else {
-            // 接收消息并返回消息
-            return postMsg(request);
-        }
-        return "";
-    }
-
     @RequestMapping("/tqyb/{city}")
     @ResponseBody
     public Object tqyb(@PathVariable String city) throws Exception {
@@ -70,14 +50,36 @@ public class WxController {
         params.put("key", key);//应用APPKEY(应用详细页查询)
         params.put("dtype", "json");//返回数据的格式,xml或json，默认json
         String returnStr = HttpUtil.getStringDataByHttp(url, params, "UTF-8");
+        log.info(returnStr);
         JSONObject jsonObject = JSONObject.parseObject(returnStr);
         //String reason = jsonObject.getString("reason");
         JSONObject result = jsonObject.getJSONObject("result");
         JSONObject data = result.getJSONObject("data");
         JSONObject realtime = data.getJSONObject("realtime");
-        JSONObject weather = realtime.getJSONObject("weather");
+        JSONObject life = data.getJSONObject("life");
+        JSONObject info = life.getJSONObject("info");
+        JSONArray yundong = info.getJSONArray("yundong");
 
-        return weather;
+        JSONObject weather = realtime.getJSONObject("weather");
+        String temperature = weather.getString("temperature");
+        String weatherInfo = weather.getString("info");
+
+        String message = "";
+        message += "天气: " + weatherInfo + " 温度：" + temperature + "°";
+        for (int i = 0; i < yundong.size() ; i++) {
+            String str = yundong.get(i).toString();
+            message += "\n" + str;
+        }
+
+        /*
+        "weather": {
+					"temperature": "22",
+					"humidity": "54",
+					"info": "阴",
+					"img": "02"
+				},
+         */
+        return message;
 
     }
 
@@ -162,6 +164,9 @@ public class WxController {
                     newsMessage.setArticles(articleList);
                     // 将图文消息对象转换成xml字符串
                     respMessage = MessageUtil.messageToXml(newsMessage);
+                } else { //if (content.contains("天气")) {
+                    text.setContent(tqyb(content).toString());
+                    respMessage = MessageUtil.messageToXml(text);
                 }
 
             }
