@@ -118,12 +118,30 @@ public class WxController {
                 List<Article> articleList = new ArrayList<>();
 
                 // 指定消息回复
-                if ("1".equals(content)) {
-                    text.setContent("今天的天气真不错！");
+                if ("今天天气怎么样".equals(content)) {
+                    text.setContent("为什么不去问问隔壁的皮卡丘呢？");
                     respMessage = MessageUtil.messageToXml(text);
                 }
+                else if ("皮卡丘是什么".equals(content)) {
+                    text.setContent("我怀疑你在耍宝");
+                    respMessage = MessageUtil.messageToXml(text);
+                }
+                else if ("吾与城北徐工孰美".equals(content)) {
+                    text.setContent("忌你太美！");
+                    respMessage = MessageUtil.messageToXml(text);
+                }
+
                 //单图文消息
-                else if ("2".equals(content)) {
+                else if ("照片".equals(content)) {
+                    ImageMessage imageMessage = new ImageMessage();
+
+                    imageMessage.setToUserName(fromUserName);
+                    imageMessage.setFromUserName(toUserName);
+                    imageMessage.setCreateTime(new Date().getTime());
+                    imageMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_IMAGE);
+                    imageMessage.setPicUrl("http://47.100.194.62/123.jpg");
+                    imageMessage.setMediaId("12");
+                    /*
                     Article article = new Article();
                     article.setTitle("微信公众帐号开发教程Java版");
                     article.setDescription("第一张图片");
@@ -135,10 +153,11 @@ public class WxController {
                     // 设置图文消息包含的图文集合
                     newsMessage.setArticles(articleList);
                     // 将图文消息对象转换成xml字符串
-                    respMessage = MessageUtil.messageToXml(newsMessage);
+                    */
+                    respMessage = MessageUtil.messageToXml(imageMessage);
                 }
                 //多图文消息
-                else if ("3".equals(content)) {
+                else if ("学习资料".equals(content)) {
                     Article article1 = new Article();
                     article1.setTitle("微信公众帐号开发教程Java版");
                     article1.setDescription("");
@@ -170,10 +189,10 @@ public class WxController {
                 }
 
             } else if (MessageUtil.EVENT_TYPE_SUBSCRIBE.equals(msgType)) {
-                text.setContent("123");
+                text.setContent("黑迹因你而精彩！");
                 respMessage = MessageUtil.messageToXml(text);
             }  else if (MessageUtil.REQ_MESSAGE_TYPE_EVENT.equals(msgType)) {//被关注事件
-                text.setContent("123");
+                text.setContent("黑迹因你而精彩！");
                 respMessage = MessageUtil.messageToXml(text);
             }
 
